@@ -9,6 +9,7 @@ RUN mkdir /unrootsquash
 WORKDIR /unrootsquash
 
 ADD unrootsquash.sh /unrootsquash/unrootsquash.sh
+ADD urshelp.sh /unrootsquash/urshelp.sh
 RUN chmod 700 /unrootsquash/unrootsquash.sh
 
 CMD bash -c /unrootsquash/unrootsquash.sh
