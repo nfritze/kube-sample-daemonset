@@ -18,7 +18,7 @@ spec:
               cpu: 0.1
           securityContext:
             privileged: true
-          image: registry.ng.bluemix.net/nfritz_alchemy/ursdaemonset
+          image: registry.ng.bluemix.net/yournamespacehere/ursdaemonset
           name: unrootsquash
           env:
             - name: MY_NODE_NAME

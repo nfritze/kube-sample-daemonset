@@ -8,6 +8,15 @@ The deployment allows this to run in privileged mode, which is necessary to acce
 
 Since this is a daemon set, new worker nodes added while it is running will automatically have the change made.
 
+First build and push the image to your registry, e.g.
+
+cf ic build --tag ursdaemonset .
+
+
+Then edit the yaml to point to your registry - specifically the line 
+
+registry.ng.bluemix.net/yournamespacehere/ursdaemonset
+
 
 Deploy the daemon set to enable the feature using
 
