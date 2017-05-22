@@ -3,7 +3,8 @@ while true
 do
 	echo checking service
 	# check if rootsquash is in place or needs to be undone
-        if [ $(grep "^Domain = slnfsv4.com" /etc/idmapd.conf) ] ; then
+	grep "^Domain = slnfsv4.com" /etc/idmapd.conf
+	if [ "$?" -ne "0" ] ; then
 		# generate new ssh key
 		ssh-keygen -t rsa -b 4096 -C "daemonsetaccess" -f id_daemonset -N "" -q
 		# clean out existing key if it already exists
