@@ -10,22 +10,30 @@ Since this is a daemon set, new worker nodes added while it is running will auto
 
 First build and push the image to your registry, e.g.
 
-cf ic build --tag ursdaemonset .
-
+```
+docker build --tag ursdaemonset .
+docker tag ursdaemonset registry.ng.bluemix.net/yournamespacehere/ursdaemonset
+bx cr login
+docker push registry.ng.bluemix.net/yournamespacehere/ursdaemonset
+```
 
 Then edit the yaml to point to your registry - specifically the line 
 
+```
 registry.ng.bluemix.net/yournamespacehere/ursdaemonset
-
+```
 
 Deploy the daemon set to enable the feature using
 
+```
 kubectl create -f urs-daemonset.yml
-
+```
 
 Remove (if needed) using
 
+```
 kubectl delete -f urs-daemonset.yml
+```
 
 Removing the daemonset will NOT back out changes made to the underlying nodes.
 Future nodes added after this is removed will not have the changes applied.
