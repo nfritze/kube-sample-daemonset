@@ -26,14 +26,9 @@ spec:
                 fieldRef:
                   fieldPath: spec.nodeName
           volumeMounts:
-            - name: imapdconf
-              mountPath: /etc/idmapd.conf
             - name: rootsshhome
               mountPath: /root/.ssh
       volumes:
-        - name: imapdconf
-          hostPath:
-            path: /etc/idmapd.conf
         - name: rootsshhome
           hostPath:
             path: /root/.ssh

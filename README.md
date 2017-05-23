@@ -38,3 +38,6 @@ kubectl delete -f urs-daemonset.yml
 Removing the daemonset will NOT back out changes made to the underlying nodes.
 Future nodes added after this is removed will not have the changes applied.
 
+
+To remove the changes, adjust `unrootsquash.sh` to use `urshelp-undo.sh` instead of `urshelp.sh`, rebuild and push the image, then update the deploy to the new image.
+

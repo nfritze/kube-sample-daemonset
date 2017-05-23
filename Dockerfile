@@ -14,5 +14,8 @@ RUN chmod 700 /unrootsquash/unrootsquash.sh
 ADD urshelp.sh /unrootsquash/urshelp.sh
 RUN chmod 700 /unrootsquash/urshelp.sh
 
+ADD urshelp-undo.sh /unrootsquash/urshelp-undo.sh
+RUN chmod 700 /unrootsquash/urshelp-undo.sh
+
 CMD bash -c /unrootsquash/unrootsquash.sh
 
