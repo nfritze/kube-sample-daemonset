@@ -39,5 +39,5 @@ Removing the daemonset will NOT back out changes made to the underlying nodes.
 Future nodes added after this is removed will not have the changes applied.
 
 
-To remove the changes, adjust `unrootsquash.sh` to use `urshelp-undo.sh` instead of `urshelp.sh`, rebuild and push the image, then update the deploy to the new image.
+To remove the changes, adjust `urs-daemonset.yml` so that the "HOST_SCRIPT" env var points to `unrootsquashundo.sh` instead of `unrootsquashset.sh`, then update the deploy with those containers.
 

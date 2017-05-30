@@ -5,17 +5,17 @@ RUN apt-get update &&\
     apt-get upgrade -y &&\
     apt-get clean
 
-RUN mkdir /unrootsquash
-WORKDIR /unrootsquash
+RUN mkdir /daemonset
+WORKDIR /daemonset
 
-ADD unrootsquash.sh /unrootsquash/unrootsquash.sh
-RUN chmod 700 /unrootsquash/unrootsquash.sh
+ADD incontainer.sh /daemonset/incontainer.sh
+RUN chmod 700 /daemonset/incontainer.sh
 
-ADD urshelp.sh /unrootsquash/urshelp.sh
-RUN chmod 700 /unrootsquash/urshelp.sh
+ADD unrootsquashset.sh /daemonset/unrootsquashset.sh
+RUN chmod 700 /daemonset/unrootsquashset.sh
 
-ADD urshelp-undo.sh /unrootsquash/urshelp-undo.sh
-RUN chmod 700 /unrootsquash/urshelp-undo.sh
+ADD unrootsquashundo.sh /daemonset/unrootsquashundo.sh
+RUN chmod 700 /daemonset/unrootsquashundo.sh
 
-CMD bash -c /unrootsquash/unrootsquash.sh
+CMD bash -c /daemonset/incontainer.sh
 

@@ -25,6 +25,8 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
+            - name: HOST_SCRIPT
+              value: "unrootsquashset.sh"
           volumeMounts:
             - name: rootsshhome
               mountPath: /root/.ssh
